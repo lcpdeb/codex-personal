@@ -1,0 +1,10 @@
+/*
+!/.gitignore
+!/AGENTS.md
+!/prompt-rules/
+!/skills/
+/skills/.system/
+/skills/hatch-pet/
+!/tools/
+
+__pycache__/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "逐步确认调查与规划"
+  short_description: "先确认业务目的；每步用具体数据核实并等待确认"
+  default_prompt: "使用 $confirmed-stepwise-investigation：先复述我真正要解决的业务目的；一次只调查或规划一项，并用具体前后数据解释后等待我确认。"

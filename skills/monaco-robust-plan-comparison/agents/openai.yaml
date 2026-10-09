@@ -1,0 +1,6 @@
+interface:
+  display_name: "Monaco 鲁棒计划对比"
+  short_description: "按确认的 StudySet 与 scenario 组合对比 Monaco 计划"
+  default_prompt: "使用 $monaco-robust-plan-comparison，先盘点并确认 StudySet 与 scenario 的具体组合，再生成成对计划、DVH 和对比图。"
+policy:
+  allow_implicit_invocation: false

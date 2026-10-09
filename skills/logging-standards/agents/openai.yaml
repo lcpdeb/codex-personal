@@ -1,0 +1,4 @@
+interface:
+  display_name: "日志规范"
+  short_description: "设计简洁、可追溯且可排障的应用日志"
+  default_prompt: "使用 $logging-standards 审计这些日志的业务信号、重复记录与真实失败边界。"
