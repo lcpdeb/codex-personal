@@ -1,5 +1,7 @@
 # WINDOWS-TOOLS：Windows 与工具操作专项规则
 
+- prompt-rules/WINDOWS-SSH.md：通过 SSH 访问用户授权的 Windows 目标机时，加载 AskPass 认证、会话控制和凭据边界。
+
 本规则适用于 Windows 文件、PowerShell、网络、Git、外部账号和 Codex 本地配置，由上级 `../AGENTS.md` 按任务范围加载。
 
 - Shell：所有命令使用 PowerShell 语法，搜索优先使用 `rg` 和 `rg --files`。
