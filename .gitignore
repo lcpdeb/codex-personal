@@ -1,6 +1,7 @@
 /*
 !/.gitignore
 !/AGENTS.md
+!/agents/
 !/prompt-rules/
 !/skills/
 /skills/.system/

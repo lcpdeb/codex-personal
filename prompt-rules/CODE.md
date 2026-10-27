@@ -186,6 +186,31 @@
     return beamNumber;
     ```
 
+- **返回对象的表达**：业务代码组装返回对象时，先声明具名结果对象，逐个成员显式赋值后再返回。`operator`、`dot`、`cross` 等纯数学运算可以直接返回表达式或 `{ ... }`，无需为形式一致增加临时变量。
+  - 示例：业务对象通过成员名说明各项结果的含义。
+    ```cpp
+    ReportSummary reportSummary;
+    reportSummary.totalCount = totalCount;
+    reportSummary.completedCount = completedCount;
+    return reportSummary;
+    ```
+  - 示例：纯数学运算含义明确，可以直接返回。
+    ```cpp
+    Vector3 operator+(const Vector3& left, const Vector3& right)
+    {
+        return { left.x + right.x,
+                 left.y + right.y,
+                 left.z + right.z };
+    }
+
+    float dot(const Vector3& left, const Vector3& right)
+    {
+        return left.x * right.x +
+               left.y * right.y +
+               left.z * right.z;
+    }
+    ```
+
 - **三元与 `if/else` 的可读性偏好**：简单、清晰的值选择优先考虑三元；需要展示多个动作、错误处理或复杂控制流程，分支包含校验、日志、状态修改等多个步骤，或嵌套条件掩盖业务含义时，优先使用 `if/else`。
 
   - 函数调用或判空后的安全解引用本身，不作为禁止三元的理由；条件与两个结果的关系直观、求值安全容易判断时，可以使用三元。
@@ -220,6 +245,19 @@
 
 - 单行强制：代码中的声明、表达式、调用、参数、元素或字段能清晰地写在一行时，必须保持单行；不得仅因参数、元素或字段较多而换行。注释不适用本规则。
   - 正例：`void update(Value value, Input a, Output b, Content c, Rules d);`。
+
+- **并列项排版**：具有对应关系、需要逐项对照的多个分量、字段或计算项，应分别换行并纵向对齐，清楚呈现其结构和对应关系。此要求优先于一般单行排版规则。
+  - 示例：
+    ```cpp
+    const Color color{ red,
+                      green,
+                      blue,
+                      alpha };
+
+    const Vector3 position{ x,
+                           y,
+                           z };
+    ```
 
 - 大括号风格：每个 `if`（包括 `else if`）的执行体都必须使用大括号，即使只有一条语句也不得省略。所有左大括号必须移动到下一行，采用 Allman 风格；适用于命名空间、类型、函数、控制语句、lambda 以及其他代码块。右大括号与所属代码块保持对应缩进。
   - 正例：
