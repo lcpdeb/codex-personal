@@ -51,7 +51,6 @@ If there is nothing to cut, say `Lean already. Ship.` and stop.
 
 Scope: over-engineering and complexity only. Correctness bugs, security holes,
 and performance are explicitly out of scope. Route them to a normal review
-pass, not this one. A single smoke test or `assert`-based
-self-check is the ponytail minimum, not bloat, never flag it for deletion.
+pass, not this one.
 Does not apply the fixes, only lists them.
 "stop ponytail-review" or "normal mode": revert to verbose review style.
