@@ -135,7 +135,10 @@
   - 示例：管理器维护 `entityIds`，各流程按该 registry 查询或分配对象。
 - **指针集合命名**：元素为指针或智能指针的集合，使用 `p` 前缀和对象复数名称，即 `pXXXXs`；单个元素使用对应的单数名称。
   - 示例：“`vector<shared_ptr<RobustCandidateWrapper>>` 命名为 `pCandidateWrappers`，其中单个元素命名为 `pCandidateWrapper`。”
+- **数量变量命名**：表示对象数量的变量使用 `n` 前缀和对象复数名称，即 `nXXXXs`。
+  - 示例：“scenario group 的数量命名为 `nScenarioGroups`，scenario 的数量命名为 `nScenarios`。”
 - **迭代器与索引命名**：迭代器变量使用 `iter` 前缀并紧接被迭代对象的完整语义；索引变量使用 `i` 前缀并紧接被索引对象的完整语义。不得使用 `it`、`iter`、`idx`、`index` 等缺少对象语义的名称，也不得让 `i` 前缀变量承载迭代器。
+  - 示例：“遍历 scenario groups 时，索引命名为 `iScenarioGroup`，总数量命名为 `nScenarioGroups`；遍历 scenarios 时分别使用 `iScenario` 和 `nScenarios`。”
   - 示例：
     ```cpp
     for (auto iterVoiOccupancy = pVoiOccupancy->begin(); iterVoiOccupancy != pVoiOccupancy->end(); ++iterVoiOccupancy)
