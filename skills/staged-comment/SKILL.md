@@ -46,9 +46,10 @@ Agent 先阅读当前暂存改动，结合用户已说明的目标和必要的�
 
 提交说明使用能完整表达主题的最短格式。第一行始终是 `<TYPE>: <主题>`；只有需要补充标题无法承载的背景、原因、约束、解决方式或多个必要措施时才写正文，不为满足格式重复标题内容。
 
-- `FIX`：标题描述**改动前具体存在的问题**，说明哪个对象在什么情况下出现了什么错误及其实际影响；修复动作、实现方式和修复后的目标放在正文，以 `- ` 说明。此规则适用于主标题和后续每个 `FIX` 主题，也适用于所有输出语言。
+- `FIX`：标题描述改动前哪个对象在什么情况下出现了什么错误，以及实际业务后果。内部字段或状态变化应追踪到用户操作、业务结果或后续流程的影响后再概括。修复动作、实现方式和修复后的目标放在正文，以 `- ` 说明；已确认目的包含与既有实现对齐时，写清对齐对象、具体行为和适用范围。此规则适用于主标题和后续每个 `FIX` 主题，也适用于所有输出语言。
   - 正例：`FIX: Robustness templates overwrite CT identities and drop candidate CTs`。
   - 反例：`FIX: Preserve CT identities and selections when applying robustness templates`；它描述的是修复目标，应放入正文。
+  - 改写：“FIX: Photon beam renumbering causes false robustness setting changes on save” → “FIX: Unchanged Photon robustness settings trigger unnecessary save prompts”
 - `FEATURE`、`PERF`、`REFACTOR`、`TEST`、`BUILD`、`CI`：动作型标题已完整说明交付内容时使用单行；需要区分现状或需求与做法，或者交代兼容性、约束、测量边界时再写正文。
 - `DOCS`、`STYLE`、`CHORE`：默认使用说明实际动作的单行标题；只有理由或多个非显然改动对理解提交必要时才写正文，不虚构运行时或业务影响。
 - `REVERT`：标题能明确撤销对象时使用单行；原因或恢复后的影响对理解提交必要时再写正文。
